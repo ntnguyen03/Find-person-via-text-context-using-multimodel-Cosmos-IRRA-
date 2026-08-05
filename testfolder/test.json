@@ -1,0 +1,18 @@
+{
+  "image_id": "person_0001_123",
+  "file_path": "data/images/person_0001/frame_123.jpg",
+  "attributes": {
+    "gender": "female",
+    "hair": "long, black",
+    "clothing": "grey shirt, long pants"
+  },
+  "captions": [
+    "A tall, thin girl with shoulder-length black hair wearing a grey long-sleeved shirt.",
+    "Người phụ nữ dáng mảnh khảnh, tóc đen ngang vai, mặc áo dài tay màu xám."
+  ],
+  "metadata": {
+    "camera_id": "CAM_04",
+    "timestamp": "2024-11-23 10:30:00",
+    "location": "Central Park, NYC"
+  }
+}

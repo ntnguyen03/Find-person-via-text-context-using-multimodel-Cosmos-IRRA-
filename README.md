@@ -1,6 +1,6 @@
-# 🔎 Alpha-Gated Multimodal Person Retrieval
+### 🔎 Alpha-Gated Multimodal Person Retrieval
 
-### Text-Based Person Retrieval with IRRA, COSMOS and Context-Aware Fusion
+#### Text-Based Person Retrieval with IRRA, COSMOS and Context-Aware Fusion
 
 <p align="center">
 
@@ -14,7 +14,7 @@
 
 ---
 
-## 📌 Overview
+### 📌 Overview
 
 This project focuses on **Text-Based Person Retrieval**, where a natural-language description is used to retrieve the most relevant person images from a gallery.
 
@@ -36,7 +36,7 @@ Based on the experimental results, the project proposes an **Alpha-Gated Hybrid 
 
 ---
 
-## 🎯 Research Objective
+### 🎯 Research Objective
 
 The main objective is to investigate:
 
@@ -52,7 +52,7 @@ and proposes a controllable fusion mechanism for combining both signals.
 
 ---
 
-## 🧠 Key Idea
+### 🧠 Key Idea
 
 A text description may contain both information about the target person and information about the surrounding environment.
 
@@ -81,7 +81,7 @@ The proposed system separates these two signals and combines them during inferen
 
 ---
 
-# 🏗️ System Architecture
+### 🏗️ System Architecture
 
 ```text
                          Text Query
@@ -132,9 +132,9 @@ where:
 
 ---
 
-# 🔬 Models
+### 🔬 Models
 
-## IRRA
+### IRRA
 
 **IRRA (Implicit Relation Reasoning and Aligning)** is used as the primary person-centric retrieval model.
 
@@ -150,7 +150,7 @@ IRRA serves as the main baseline for evaluating text-to-person retrieval perform
 
 ---
 
-## COSMOS
+### COSMOS
 
 **COSMOS (Cross-Modality Self-Distillation)** is investigated as a multimodal model capable of capturing broader visual information.
 
@@ -160,7 +160,7 @@ This makes COSMOS interesting for studying the role of environmental context in 
 
 ---
 
-# ⚠️ Background Noise Problem
+### ⚠️ Background Noise Problem
 
 The experiments revealed an important observation:
 
@@ -185,7 +185,7 @@ Therefore, relying too heavily on contextual features can make retrieval less ro
 
 ---
 
-# 📊 Experimental Results
+### 📊 Experimental Results
 
 The project compares the IRRA baseline with the COSMOS-IRRA configuration.
 
@@ -203,7 +203,7 @@ These results motivated the development of the Alpha-Gated Hybrid Retrieval appr
 
 ---
 
-# 🚀 Alpha-Gated Hybrid Retrieval
+### 🚀 Alpha-Gated Hybrid Retrieval
 
 Instead of forcing the system to rely entirely on either person features or context features, the proposed method allows the retrieval strategy to be controlled dynamically.
 
@@ -218,7 +218,7 @@ Instead of forcing the system to rely entirely on either person features or cont
      FOCUS       FUSION       FOCUS
 ```
 
-### Person-focused retrieval
+#### Person-focused retrieval
 
 ```text
 Alpha = 1.0
@@ -226,7 +226,7 @@ Alpha = 1.0
 
 The system prioritizes the appearance and identity-related features of the person.
 
-### Balanced retrieval
+#### Balanced retrieval
 
 ```text
 Alpha = 0.5
@@ -234,7 +234,7 @@ Alpha = 0.5
 
 Person and background information contribute equally.
 
-### Context-focused retrieval
+#### Context-focused retrieval
 
 ```text
 Alpha = 0.0
@@ -244,13 +244,13 @@ The retrieval is driven entirely by contextual similarity.
 
 ---
 
-# 🖥️ Interactive Application
+### 🖥️ Interactive Application
 
 The proposed system is implemented as an interactive **Streamlit** application.
 
 The interface provides:
 
-### 🎛️ Alpha Control
+#### 🎛️ Alpha Control
 
 Allows users to dynamically adjust the balance between:
 
@@ -258,17 +258,17 @@ Allows users to dynamically adjust the balance between:
 Person Similarity  ←────────────→  Background Similarity
 ```
 
-### 🎯 Confidence Threshold
+#### 🎯 Confidence Threshold
 
 Filters retrieval results according to their similarity score.
 
-### 💬 Text Query
+#### 💬 Text Query
 
 Users can enter natural-language descriptions and retrieve the most relevant pedestrian images.
 
 ---
 
-# ⚡ Efficient Inference
+### ⚡ Efficient Inference
 
 To reduce inference time, image features are pre-computed for the gallery.
 
@@ -313,7 +313,7 @@ This avoids repeatedly encoding the entire image gallery for every query.
 
 ---
 
-# 📚 Dataset
+### 📚 Dataset
 
 The project uses **RSTPReid (Real Scenarios Text-based Person Re-identification)** for text-based person retrieval experiments.
 
@@ -332,7 +332,7 @@ The dataset contains realistic variations including:
 
 ---
 
-# 📂 Project Structure
+### 📂 Project Structure
 
 ```text
 .
@@ -359,9 +359,9 @@ The dataset contains realistic variations including:
 
 ---
 
-# ⚙️ Installation
+### ⚙️ Installation
 
-## 1. Clone the repository
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/ntnguyen03/Find-person-via-text-context-using-multimodel-Cosmos-IRRA-.git
@@ -369,19 +369,19 @@ git clone https://github.com/ntnguyen03/Find-person-via-text-context-using-multi
 cd Find-person-via-text-context-using-multimodel-Cosmos-IRRA-
 ```
 
-## 2. Create a virtual environment
+### 2. Create a virtual environment
 
 ```bash
 python -m venv venv
 ```
 
-### Windows
+#### Windows
 
 ```powershell
 venv\Scripts\activate
 ```
 
-## 3. Install dependencies
+### 3. Install dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -389,7 +389,7 @@ pip install -r requirements.txt
 
 ---
 
-# ▶️ Running the Application
+### ▶️ Running the Application
 
 After configuring the dataset and model checkpoints:
 
@@ -401,19 +401,19 @@ streamlit run app.py
 
 ---
 
-# 🔍 Interpretability
+### 🔍 Interpretability
 
 The project also investigates model behavior through:
 
-### Cross-Attention Visualization
+#### Cross-Attention Visualization
 
 Used to analyze which regions of an image receive stronger attention.
 
-### t-SNE Visualization
+#### t-SNE Visualization
 
 Used to visualize the distribution of learned embeddings and identity clusters.
 
-### Retrieval Ranking
+#### Retrieval Ranking
 
 Used to observe how changing Alpha affects the final ranking of retrieved images.
 
@@ -421,31 +421,31 @@ These analyses help explain not only **which model performs better**, but also *
 
 ---
 
-# 🧩 Main Contributions
+### 🧩 Main Contributions
 
-### 1. IRRA vs. COSMOS Analysis
+#### 1. IRRA vs. COSMOS Analysis
 
 A comparative investigation of person-centric and multimodal representation learning for text-based person retrieval.
 
-### 2. Background Noise Analysis
+#### 2. Background Noise Analysis
 
 Analysis of how excessive contextual information can negatively affect Person Re-ID performance.
 
-### 3. Alpha-Gated Fusion
+#### 3. Alpha-Gated Fusion
 
 A late-fusion mechanism that dynamically combines person and background similarity.
 
-### 4. Human-in-the-Loop Retrieval
+#### 4. Human-in-the-Loop Retrieval
 
 Users can directly control the retrieval behavior through the Alpha parameter.
 
-### 5. Interactive Prototype
+#### 5. Interactive Prototype
 
 A Streamlit-based prototype demonstrates the proposed retrieval mechanism in an interactive environment.
 
 ---
 
-# 🛣️ Future Work
+### 🛣️ Future Work
 
 - [ ] Learnable Alpha / automatic query-aware weighting
 - [ ] Improved subject/background separation
@@ -457,31 +457,37 @@ A Streamlit-based prototype demonstrates the proposed retrieval mechanism in an 
 
 ---
 
-# 📖 References
+### 📖 References
 
-### IRRA
+#### IRRA
 
 > Cross-Modal Implicit Relation Reasoning and Aligning for Text-to-Image Person Retrieval.
 
-### COSMOS
+#### COSMOS
 
 > Cross-Modality Self-Distillation for Vision-Language Pre-training.
 
-### CLIP
+#### CLIP
 
 > Learning Transferable Visual Models From Natural Language Supervision.
 
-### Vision Transformer
+#### Vision Transformer
 
 > An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale.
 
 ---
 
-# 👨‍💻 Author
+### 👨‍💻 Author
 
 **Nguyễn Trường Nam**
 
-Information Technology Student - Dai Nam University
+Information Technology Student  
 Vietnam 🇻🇳
 
 ---
+
+<p align="center">
+
+⭐ If you find this project interesting, consider giving it a star.
+
+</p>

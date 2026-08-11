@@ -481,13 +481,9 @@ A Streamlit-based prototype demonstrates the proposed retrieval mechanism in an 
 
 **Nguyễn Trường Nam**
 
-Information Technology Student  
+Information Technology Student - Dai Nam University
 Vietnam 🇻🇳
 
 ---
-
-<p align="center">
-
-⭐ If you find this project interesting, consider giving it a star.
 
 </p>
